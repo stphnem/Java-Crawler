@@ -16,9 +16,9 @@ public class Controller {
 	public static void main(String[] args) throws Exception {
 		
         String crawlStorageFolder = "D:\\Documents\\CS121\\Assignment 3\\";
-        String userAgentString = "UCI Inf141-CS121 crawler 33819914";
-        int maxDepthOfCrawling = 1;
-        int politenessDelay = 750;
+        String userAgentString = "UCI Inf141-CS121 crawler 33819914 45502833 50183290";
+        int maxDepthOfCrawling = 5;
+        int politenessDelay = 500;
         int numberOfCrawlers = 7;
         boolean resumableCrawling = false;
 
@@ -77,5 +77,6 @@ public class Controller {
          * will reach the line after this only when crawling is finished.
          */
         controller.start(MyCrawler.class, numberOfCrawlers);
+        
     }
 }

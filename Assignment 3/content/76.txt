@@ -1,0 +1,200 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+                <title>graduation and beyond @ the bren school of information and computer sciences</title>
+                
+                
+                <meta content="Wed, 18 Feb 2015 13:53:28 -0320" name="date"/>
+                
+<link href="../bin/styles/stylesheet_secondary.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<!-- before breadcrumb_nav include -->
+ <!-- after breadcrumb_nav include -->
+
+<div id="wrapper">
+<script type="text/javascript">
+
+sfHover = function() {
+    var sfEls = document.getElementById("navcontainer").getElementsByTagName("LI");
+    for (var i=0; i<sfEls.length; i++) {
+        sfEls[i].onmouseover=function() {
+            this.className+=" sfhover";
+        }
+        sfEls[i].onmouseout=function() {
+            this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+        }
+    }
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+</script>
+
+
+
+
+
+      <style>
+
+
+         #school_header {
+             background-image: url('http://www.ics.uci.edu/bin/img/ICSWebBanner2014-bigUCI.png');
+             background-repeat: no-repeat;
+             background-color: #0064a4;
+             margin-bottom: 0;
+             width: 760px;
+             height: 70px;
+             position: relative;
+         }
+
+
+         #school_link {
+                 display: block;
+                 position: absolute;
+                 width: 100%; height: 100%;
+         }
+
+
+         #uci_link {
+            display: block;
+            position: absolute;
+
+            height: 45px;
+            width: 109px;
+            left: 18px;
+            top: 7px;
+
+         }
+
+
+      </style>
+
+
+
+      <div id="school_header">
+
+         <a id="school_link" href="http://www.ics.uci.edu/" TITLE="Donald Bren School of Information and Computer Sciences"></a>
+
+         <a id="uci_link" href="http://www.uci.edu/" TITLE="University of California, Irvine"></a>
+
+      </div>
+
+
+
+
+
+
+
+
+
+    <div id="navcontainer">
+
+                
+            <ul>
+                
+                <li>
+                
+                    <a href='/about/' title='about'>&raquo; About</a>
+
+                    
+                    <ul>
+                        <li><a href='/about/'>&raquo; About the School</a></li>
+                        <li><a href='/about/about_mission.php'>&raquo; Bren ICS Mission</a></li>
+                        <li><a href='/about/about_deanmsg.php'>&raquo; Dean's Welcome</a></li>
+                        <li><a href='/about/bren/'>&raquo; About the Bren Gift</a></li>
+                        <li><a href='/about/about_factsfigures.php'>&raquo; Facts and Figures</a></li>
+                        <li><a href='/about/brenhall/index.php'>&raquo; Donald Bren Hall</a></li>
+                        <li><a href='/about/visit/index.php'>&raquo; Visit the Bren School</a></li>
+                        <li><a href='/about/about_contact.php'>&raquo; Contact Us</a></li>
+                        <LI><A HREF='/about/equity/'>&raquo; Equity & Diversity</A></LI>
+                    </ul>               
+                </li>
+                
+                <li>
+                
+                    <a href='/dept/' title='departments'>&raquo; Departments</a>
+                    
+
+                    <ul>
+                        <li><a href='http://www.cs.uci.edu'>&raquo; Computer Science</a></li>
+                        <li><a href='http://www.informatics.uci.edu'>&raquo; Informatics</a></li>
+                        <li><a href='http://www.stat.uci.edu'>&raquo; Statistics</a></li>
+                    </ul>               
+                </li>
+                
+                <li>
+                
+                    <a href='/faculty/area/' title='research'>&raquo; Research</a>
+                
+                
+                    <ul>
+                        <li><a href='/faculty/area/'>&raquo; Research Areas</a></li>
+                        <li><a href='/faculty/centers/'>&raquo; Research Centers</a></li>
+                        <li><a href='/faculty/highlights/'>&raquo; Research Highlights</a></li>
+                    </ul>
+                </li>
+                
+                
+                
+                <li>
+                
+                    <span id=specialborder><a href='#' title='education'>&raquo; Education</a></span>
+                    
+
+                    <ul>
+                        <li><a href='/grad/'>&raquo; Graduate</a>
+                        
+                            <ul>                        
+                            <li><a href='/grad/admissions/index'>Prospective Students</a></li>
+                            <li><a href='/grad/degrees/index'>Programs of Study</a></LI>
+                            <li><a href='/grad/degrees/degrees_MSOverview'>M.S. Degree Overview</a></li>
+                            <li><a href='/grad/degrees/degrees_PhDOverview'>Ph.D. Degree Overview</a></li>
+                            <li><a href='/grad/courses/index'>Academic Year Plan</a></li>
+                            <li><a href='/grad/forms/index'>Forms</a></li>
+                            <li><a href='/grad/policies/index'>Policies</a></li>
+                            <li><a href='/grad/funding/index'>Funding &amp; Housing</a></li>
+                            <li><a href='/computing/account/new'>Computing Support</a></li>
+                            <li><a href='/grad/resources'>Campus Resources</a></li>
+                            <li><a href='/about/visit/index'>Visit the Bren School</a></li>
+                            <li><a href='http://www.ics.uci.edu/bin/pdf/grad/Graduate%20Student%20Handbook%20F14-15.pdf'>Graduate Student Handbook</a></li>
+                            </ul>
+
+                        </li>
+                        
+                        <li><a href='/ugrad/'>&raquo; Undergraduate</a>
+                        
+                            <ul>
+                            <li><a href='/ugrad/sao/index'>Academic Advising</a></li>
+                            <li><a href='/ugrad/courses/index'>Academic Year Plan</a></li>
+                            <li><a href='/ugrad/QA_Petitions'>Petitions</a></li>
+                            <li><a href='/ugrad/degrees/index.php'>ICS Majors</a></li>
+                            <li><a href='/ugrad/degrees/Minors'>ICS Minors</a></li>
+
+                            <li><a href='/ugrad/policies/Academic_Integrity'>Policies: Academic Integrity</a></li>
+                            <li><a href='/ugrad/policies/Academic_Standing'>Policies: Academic Standing</a></li>
+                            <li><a href='/ugrad/policies/Add_Drop_ChangeOption'>Policies: Add, drop, &amp; change options</a></li>
+                            <li><a href='/ugrad/policies/Course_Outside_UCI'>Policies: Coursework outside UCI</a></li>
+                            <li><a href='/ugrad/policies/Grade_Options'>Policies: Grade policy</a></li>
+                            <li><a href='/ugrad/policies/Laptop_ComputerUse'>Policies: Laptop &amp; computer use</a></li>
+                            <li><a href='/ugrad/policies/Withdrawal_Readmission'>Policies: Withdrawal/Readmission</a></li>
+
+                              <li><a href='/ugrad/QA_Graduation'>Graduation</a></li>
+                              <li><a href='/ugrad/resources/index'>ICS Student Life</a></li>
+                              <li><a href='/computing/account/new'>Computing Support</a></li>
+                            </ul>
+                        </li>
+                        
+                        
+                        <li><a href='http://www.ics.uci.edu/prospective'>&raquo; Prospective Undergrad</a></li>
+
+
+                        <li><a href='http://www.parents.uci.edu/'>&raquo; UCI Parents</a></li>
+                        
+                                                    
+                    </ul>               
+                </li>
+
+    
+                <li>
+                    
+                    <a href='#' tit

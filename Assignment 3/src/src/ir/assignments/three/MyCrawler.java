@@ -1,5 +1,7 @@
 package src.ir.assignments.three;
 
+import java.util.*;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -16,11 +18,18 @@ import edu.uci.ics.crawler4j.url.WebURL;
 
 public class MyCrawler extends WebCrawler {
 
-	private static final Pattern IMAGE_EXTENSIONS = Pattern.compile(".*\\.(bmp|gif|jpg|png|ppt|mov)$");
-	private Set subdomains = new HashSet();
+	private static final Pattern IMAGE_EXTENSIONS = Pattern.compile(".*(\\.(css|js|bmp|gif|jpeg|png|tiff?|mid|mp2|mp3|mp4|wav|avi|mov|mpeg|ram|m4v|pdf|rm|smil|wmv|swf|wma|zip|rar|gz|ico|pfm|c|h|o))$");
+	private HashMap<String, Set<String>> subdomains = new HashMap<String, Set<String>>();
 	
-	public void addSubdomain(String subdomain) {
-		subdomains.add(subdomain);
+	public void addSubdomain(String subdomain, String url) {
+		if (subdomains.containsKey(subdomain)) {
+			subdomains.get(subdomain).add(url);
+		}
+		else {
+			Set<String> uniqueUrl = new HashSet<String>();
+			uniqueUrl.add(url);
+			subdomains.put(subdomain, uniqueUrl);
+		}
 	}
 
     /**
@@ -42,7 +51,7 @@ public class MyCrawler extends WebCrawler {
          }
 
          // Only accept the url if it is in the "www.ics.uci.edu" domain and protocol is "http".
-         return href.startsWith("http://www.ics.uci.edu/");
+         return href.matches("(http://).*(.ics.uci.edu/).*");
      }
 
      /**
@@ -60,26 +69,23 @@ public class MyCrawler extends WebCrawler {
          String anchor = page.getWebURL().getAnchor();
          System.out.println("URL: " + url);
          
-         // Log all the information I just received from the webpage
-         logger.debug("Docid: {}", docid);
-         logger.info("URL: {}", url);
-         logger.debug("Domain: '{}'", domain);
-         logger.debug("Sub-domain: '{}'", subDomain);
-         logger.debug("Path: '{}'", path);
-         logger.debug("Parent page: {}", parentUrl);
-         logger.debug("Anchor text: {}", anchor);
-         
+         addSubdomain(subDomain, url);
 
          if (page.getParseData() instanceof HtmlParseData) {
              HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
              String text = htmlParseData.getText();
              String html = htmlParseData.getHtml();
              Set<WebURL> links = htmlParseData.getOutgoingUrls();
-
-             // Log the parsed data
-             logger.debug("Text length: {}", text.length());
-             logger.debug("Html length: {}", html.length());
-             logger.debug("Number of outgoing links: {}", links.size());
+             
+             PrintWriter writer;
+			 try {
+				 writer = new PrintWriter("content/" + String.valueOf(docid) + ".txt", "UTF-8");
+				 writer.println(html);
+			 } catch (FileNotFoundException e) {
+				 e.printStackTrace();
+			 } catch (UnsupportedEncodingException e) {
+				 e.printStackTrace();
+			 }
              
              System.out.println("Text length: " + text.length());
              System.out.println("Html length: " + html.length());
