@@ -3,6 +3,7 @@ package src.ir.assignments.three;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -15,8 +16,12 @@ import edu.uci.ics.crawler4j.url.WebURL;
 
 public class MyCrawler extends WebCrawler {
 
-    private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|gif|jpg"
-                                                           + "|png|mp3|mp3|zip|gz))$");
+	private static final Pattern IMAGE_EXTENSIONS = Pattern.compile(".*\\.(bmp|gif|jpg|png|ppt|mov)$");
+	private Set subdomains = new HashSet();
+	
+	public void addSubdomain(String subdomain) {
+		subdomains.add(subdomain);
+	}
 
     /**
      * This method receives two parameters. The first parameter is the page
@@ -31,8 +36,13 @@ public class MyCrawler extends WebCrawler {
      @Override
      public boolean shouldVisit(Page referringPage, WebURL url) {
          String href = url.getURL().toLowerCase();
-         return !FILTERS.matcher(href).matches()
-                && href.startsWith("http://www.ics.uci.edu/");
+         // Ignore the url if it has an extension that matches our defined set of image extensions.
+         if (IMAGE_EXTENSIONS.matcher(href).matches()) {
+           return false;
+         }
+
+         // Only accept the url if it is in the "www.ics.uci.edu" domain and protocol is "http".
+         return href.startsWith("http://www.ics.uci.edu/");
      }
 
      /**

@@ -14,7 +14,8 @@ public class Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 	
 	public static void main(String[] args) throws Exception {
-        String crawlStorageFolder = "/data/crawl/root";
+		
+        String crawlStorageFolder = "D:\\Documents\\CS121\\Assignment 3\\";
         String userAgentString = "UCI Inf141-CS121 crawler 33819914";
         int maxDepthOfCrawling = 1;
         int politenessDelay = 750;
